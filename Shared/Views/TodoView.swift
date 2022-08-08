@@ -52,7 +52,7 @@ struct TodoView: View {
                         Text(todo.taskDescription ?? "")
                             .font(.footnote)
                     }
-                }.foregroundColor(todo.completed ? .gray : .white)
+                }.foregroundColor(todo.completed ? .gray : .primary)
                 
                 Spacer()
                 

@@ -102,6 +102,7 @@ struct TodoCreationPopView: View {
             todo.project = currentSelectedProject
             if dateDueEnabled {
                 todo.dateDue = dateDue
+                todo.setupLocalNotification()
             }
             todo.completed = false
             

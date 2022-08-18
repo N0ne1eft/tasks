@@ -124,6 +124,15 @@ struct ProjectSideBarView: View {
                 }
                 .buttonStyle(.plain)
                 .keyboardShortcut("n", modifiers: [.shift, .command])
+                Button {
+                    
+                } label: {
+                    Image(systemName: "timer")
+                        .resizable()
+                        .frame(width: 15, height: 15)
+                        .foregroundColor(.gray)
+                }
+                .buttonStyle(.plain)
                 Spacer()
             }.padding(10)
         }

@@ -99,6 +99,7 @@ struct TodoDetailView: View {
                 
                 if showEditingView {
                     Button("Done") {
+                        todo!.setupLocalNotification()
                         saveContext()
                         showEditingView = false
                     }

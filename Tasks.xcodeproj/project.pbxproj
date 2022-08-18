@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180D459828AE1F08009DBCB9 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180D459728AE1F08009DBCB9 /* Todo.swift */; };
+		180D459928AE1F08009DBCB9 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180D459728AE1F08009DBCB9 /* Todo.swift */; };
 		189558AE28A0E9CE00C64A95 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189558AD28A0E9CE00C64A95 /* Utils.swift */; };
 		189558AF28A0E9CE00C64A95 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189558AD28A0E9CE00C64A95 /* Utils.swift */; };
 		189558B128A0F69D00C64A95 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 189558B028A0F69D00C64A95 /* README.md */; };
@@ -42,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180D459728AE1F08009DBCB9 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		189558AD28A0E9CE00C64A95 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		189558B028A0F69D00C64A95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18AD23592893CA4100850E41 /* TasksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksApp.swift; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				18E9BD9F28951EF20008859B /* ViewUpdater.swift */,
+				180D459728AE1F08009DBCB9 /* Todo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +274,7 @@
 				189558AE28A0E9CE00C64A95 /* Utils.swift in Sources */,
 				18AD23852893CB0800850E41 /* TodoCreationPopView.swift in Sources */,
 				18AD236C2893CA4200850E41 /* TasksApp.swift in Sources */,
+				180D459828AE1F08009DBCB9 /* Todo.swift in Sources */,
 				18D7402E289B780200F32AFE /* ProjectCreationView.swift in Sources */,
 				18AD23832893CB0800850E41 /* TodoView.swift in Sources */,
 				18D74034289CC50500F32AFE /* TodoDetailView.swift in Sources */,
@@ -289,6 +294,7 @@
 				189558AF28A0E9CE00C64A95 /* Utils.swift in Sources */,
 				18AD23862893CB0800850E41 /* TodoCreationPopView.swift in Sources */,
 				18AD236D2893CA4200850E41 /* TasksApp.swift in Sources */,
+				180D459928AE1F08009DBCB9 /* Todo.swift in Sources */,
 				18D7402F289B780200F32AFE /* ProjectCreationView.swift in Sources */,
 				18AD23842893CB0800850E41 /* TodoView.swift in Sources */,
 				18D74035289CC50500F32AFE /* TodoDetailView.swift in Sources */,
@@ -479,11 +485,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A4NB7M5684;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -509,11 +515,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A4NB7M5684;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

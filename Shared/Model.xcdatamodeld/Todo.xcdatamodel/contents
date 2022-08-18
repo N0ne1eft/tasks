@@ -11,12 +11,13 @@
         <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateDue" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="iconURL" optional="YES" attributeType="String"/>
+        <attribute name="notificationUUID" optional="YES" attributeType="String"/>
         <attribute name="taskDescription" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="todos" inverseEntity="Project"/>
     </entity>
     <elements>
         <element name="Project" positionX="-63" positionY="27" width="128" height="89"/>
-        <element name="Todo" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Todo" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

@@ -36,7 +36,6 @@ struct TodoProjectView: View {
         } catch {
             fatalError("Unable to fetch todos")
         }
-        
     }
     
     var body: some View {
@@ -53,6 +52,14 @@ struct TodoProjectView: View {
                         TodoDetailView(todo: todo)
                     } label: {
                         TodoView(todo: todo)
+                    }
+                    .contextMenu {
+                        if todo.completed {
+                            Button("Mark as Todo") { todo.toggle() }
+                        } else {
+                            Button("Mark as Done") { todo.toggle() }
+                        }
+                        Button("Delete") { todo.delete() }
                     }
                 }
             }

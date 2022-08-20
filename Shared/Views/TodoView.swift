@@ -11,27 +11,7 @@ import CoreData
 struct TodoView: View {
     
     @ObservedObject var todo: Todo
-    
-    private func deleteTodo(_ todo: Todo) {
-        let viewContext = PersistenceController.shared.container.viewContext
-        viewContext.delete(todo)
-        do {
-            try viewContext.save()
-        } catch {
-            fatalError("Unable to save changes to Todo Store")
-        }
-    }
-    
-    private func toggleTodo(_ todo: Todo) {
-        let viewContext = PersistenceController.shared.container.viewContext
-        todo.completed.toggle()
-        do {
-            try viewContext.save()
-        } catch {
-            fatalError("Unable to save changes to Todo Store")
-        }
-    }
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -57,18 +37,23 @@ struct TodoView: View {
                 Spacer()
                 
                 if todo.dateDue != nil {
-                    VStack {
-                        Text( todo.dateDue!.formatted(.dateTime.hour().minute()) )
+                    VStack(alignment: .trailing) {
+                        Text(humanReadableTimeDiff(todo.dateDue!, Date.now))
                             .font(.title2)
-                        Text( todo.dateDue!.formatted(.dateTime.day().month()) )
-                            .font(.footnote)
+                        HStack {
+                            Text( todo.dateDue!.formatted(.dateTime.hour().minute()) )
+                                .font(.footnote)
+                            Text( todo.dateDue!.formatted(.dateTime.day().month()) )
+                                .font(.footnote)
+                        }
                     }
+                    .foregroundColor(todo.dateDue!.compare(Date.now) == .orderedAscending ? .orange : .primary)
                 }
             }
         }
         .swipeActions(edge: .leading) {
             Button {
-                toggleTodo(todo)
+                todo.toggle()
             } label: {
                 if todo.completed {
                     Label("Untag as completed", systemImage: "arrow.clockwise.circle.fill")
@@ -81,7 +66,7 @@ struct TodoView: View {
         .swipeActions(edge: .trailing) {
             Button {
                 withAnimation {
-                    deleteTodo(todo)
+                    todo.delete()
                 }
             } label: {
                 Label("Delete", systemImage: "trash")

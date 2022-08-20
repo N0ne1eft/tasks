@@ -11,6 +11,26 @@ import UserNotifications
 
 extension Todo {
     
+    func delete() {
+        let viewContext = PersistenceController.shared.container.viewContext
+        viewContext.delete(self)
+        do {
+            try viewContext.save()
+        } catch {
+            fatalError("Unable to save changes to Todo Store")
+        }
+    }
+    
+    func toggle() {
+        let viewContext = PersistenceController.shared.container.viewContext
+        self.completed.toggle()
+        do {
+            try viewContext.save()
+        } catch {
+            fatalError("Unable to save changes to Todo Store")
+        }
+    }
+    
     func setupLocalNotification() {
         if self.dateDue == nil {return}
         let content = UNMutableNotificationContent()

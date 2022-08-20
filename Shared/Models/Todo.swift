@@ -6,10 +6,34 @@
 //
 
 import Foundation
+import SwiftUI
 import CoreData
 import UserNotifications
 
+enum TodoState {
+    case InProgress
+    case OverDue
+    case Completed
+}
+
 extension Todo {
+    
+    func state() -> TodoState {
+        if self.completed {return .Completed}
+        if self.dateDue == nil {
+            return .InProgress
+        } else {
+            return self.dateDue! < Date.now ? .OverDue : .InProgress
+        }
+    }
+    
+    func stateColor() -> Color {
+        switch self.state() {
+        case .InProgress: return .primary
+        case .OverDue: return .orange
+        case .Completed: return .gray
+        }
+    }
     
     func delete() {
         let viewContext = PersistenceController.shared.container.viewContext

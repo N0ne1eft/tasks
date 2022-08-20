@@ -11,7 +11,7 @@ import CoreData
 struct TodoView: View {
     
     @ObservedObject var todo: Todo
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -32,7 +32,7 @@ struct TodoView: View {
                         Text(todo.taskDescription ?? "")
                             .font(.footnote)
                     }
-                }.foregroundColor(todo.completed ? .gray : .primary)
+                }
                 
                 Spacer()
                 
@@ -47,10 +47,10 @@ struct TodoView: View {
                                 .font(.footnote)
                         }
                     }
-                    .foregroundColor(todo.dateDue!.compare(Date.now) == .orderedAscending ? .orange : .primary)
                 }
             }
         }
+        .foregroundColor(todo.stateColor())
         .swipeActions(edge: .leading) {
             Button {
                 todo.toggle()
